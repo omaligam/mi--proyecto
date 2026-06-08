@@ -50,11 +50,13 @@ graph_config = {
 }
 
 PROMPT = (
-    "Encontra empresas, marcas o agencias que actualmente estan buscando "
-    "contratar una productora audiovisual (para video, fotografia, cobertura "
-    "de eventos o creacion de contenido). Para cada una indica el nombre de "
-    "la empresa, que tipo de servicio audiovisual necesita, datos de contacto "
-    "si estan disponibles, y la URL donde se publico la busqueda."
+    "Encontra marcas y empresas en Mexico (no agencias de publicidad, sino "
+    "las empresas finales/anunciantes) que actualmente esten buscando "
+    "contratar una productora audiovisual para contenido corporativo y "
+    "publicitario (videos institucionales, comerciales, branded content). "
+    "Para cada una indica el nombre de la empresa, que tipo de servicio "
+    "audiovisual necesita, datos de contacto si estan disponibles, y la URL "
+    "donde se publico la busqueda."
 )
 
 search_graph = SearchGraph(prompt=PROMPT, config=graph_config, schema=Leads)
