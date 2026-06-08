@@ -1,0 +1,3 @@
+[submodule "Scrapegraph-ai"]
+	path = Scrapegraph-ai
+	url = https://github.com/ScrapeGraphAI/Scrapegraph-ai.git
