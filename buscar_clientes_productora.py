@@ -24,9 +24,16 @@ load_dotenv()
 
 
 class Lead(BaseModel):
-    empresa: str = Field(description="Nombre de la empresa o marca que busca el servicio")
+    empresa: str = Field(description="Nombre de la empresa, marca o dependencia que busca el servicio")
     necesidad: str = Field(
         description="Que tipo de servicio audiovisual busca (video, fotografia, eventos, etc.)"
+    )
+    presupuesto: Optional[str] = Field(
+        description=(
+            "Presupuesto, monto o rango economico mencionado para el proyecto/licitacion, "
+            "si esta disponible (ej. licitaciones de gobierno suelen publicarlo)"
+        ),
+        default=None,
     )
     contacto: Optional[str] = Field(
         description="Email, telefono o persona de contacto si esta disponible", default=None
@@ -50,13 +57,17 @@ graph_config = {
 }
 
 PROMPT = (
-    "Encontra marcas y empresas en Mexico (no agencias de publicidad, sino "
-    "las empresas finales/anunciantes) que actualmente esten buscando "
-    "contratar una productora audiovisual para contenido corporativo y "
-    "publicitario (videos institucionales, comerciales, branded content). "
-    "Para cada una indica el nombre de la empresa, que tipo de servicio "
-    "audiovisual necesita, datos de contacto si estan disponibles, y la URL "
-    "donde se publico la busqueda."
+    "Encontra licitaciones, convocatorias y avisos de contratacion publica "
+    "(gobierno federal, estatal o municipal de Mexico, por ejemplo en "
+    "CompraNet u otros portales de compras gubernamentales) y tambien marcas "
+    "y empresas privadas (incluyendo PYMES) en Mexico que actualmente esten "
+    "buscando contratar una productora audiovisual para contenido corporativo "
+    "y publicitario (videos institucionales, comerciales, branded content). "
+    "Da prioridad a las fuentes de gobierno porque suelen publicar el "
+    "presupuesto o monto asignado. Para cada oportunidad indica el nombre de "
+    "la empresa o dependencia, que tipo de servicio audiovisual necesita, el "
+    "presupuesto o monto si esta disponible, datos de contacto si los hay, y "
+    "la URL donde se publico la busqueda."
 )
 
 search_graph = SearchGraph(prompt=PROMPT, config=graph_config, schema=Leads)

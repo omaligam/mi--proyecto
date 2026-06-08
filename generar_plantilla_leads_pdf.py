@@ -21,14 +21,14 @@ styles = getSampleStyleSheet()
 title_style = styles["Title"]
 normal_style = styles["Normal"]
 
-headers = ["Empresa", "PYME (Si/No)", "Necesidad audiovisual", "Contacto", "Fuente / URL"]
+headers = ["Empresa", "PYME (Si/No)", "Necesidad audiovisual", "Presupuesto", "Contacto", "Fuente / URL"]
 filler_rows = 25
 
 data = [headers] + [["" for _ in headers] for _ in range(filler_rows)]
 
 table = Table(
     data,
-    colWidths=[5 * cm, 2.3 * cm, 5.5 * cm, 5 * cm, 6 * cm],
+    colWidths=[4.3 * cm, 2 * cm, 4.7 * cm, 3 * cm, 4.3 * cm, 5 * cm],
     repeatRows=1,
 )
 
@@ -60,8 +60,9 @@ elements = [
     Spacer(1, 0.3 * cm),
     Paragraph(
         "Plantilla para volcar los resultados de buscar_clientes_productora.py "
-        "(empresas y PYMES en Mexico que requieren contenido corporativo / "
-        "publicitario en video, foto o eventos).",
+        "(empresas, PYMES y licitaciones de gobierno en Mexico que requieren "
+        "contenido corporativo / publicitario en video, foto o eventos, "
+        "incluyendo presupuesto cuando este disponible).",
         normal_style,
     ),
     Spacer(1, 0.6 * cm),
