@@ -1,0 +1,139 @@
+{
+  "name": "@ckelsoe/prompt-architect",
+  "version": "3.2.2",
+  "description": "Agent skill for analyzing and improving prompts using 27 research-backed frameworks across 7 intent categories. Works with Claude Code, Gemini CLI, Cursor, Copilot, and 30+ Agent Skills compatible tools.",
+  "main": "skills/prompt-architect/SKILL.md",
+  "keywords": [
+    "claude-code",
+    "claude-skill",
+    "agent-skills",
+    "gemini-cli",
+    "prompt-engineering",
+    "prompt-improvement",
+    "prompt-frameworks",
+    "co-star",
+    "risen",
+    "rise",
+    "tidd-ec",
+    "rtf",
+    "ctf",
+    "ape",
+    "bab",
+    "race",
+    "crispe",
+    "broke",
+    "care",
+    "chain-of-thought",
+    "chain-of-density",
+    "skeleton-of-thought",
+    "step-back-prompting",
+    "least-to-most",
+    "plan-and-solve",
+    "tree-of-thought",
+    "react-prompting",
+    "self-refine",
+    "devils-advocate",
+    "pre-mortem",
+    "reverse-prompt-engineering",
+    "ai-prompts",
+    "llm-prompts",
+    "prompt-optimization",
+    "ai-engineering",
+    "llm-engineering",
+    "prompt-architect"
+  ],
+  "author": "Charles Kelsoe <charles@kelsoe.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckelsoe/prompt-architect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ckelsoe/prompt-architect/issues"
+  },
+  "homepage": "https://github.com/ckelsoe/prompt-architect#readme",
+  "bin": {
+    "prompt-architect": "scripts/install.js"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "skills/",
+    ".claude-plugin/",
+    "adapters/",
+    "scripts/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "MIGRATION.md"
+  ],
+  "scripts": {
+    "test": "node scripts/test.js",
+    "validate": "node scripts/validate-skill.js",
+    "install-user": "node scripts/install.js",
+    "install-project": "node scripts/install.js --project",
+    "postinstall": "node scripts/install.js",
+    "build:skill": "node scripts/build-skill.js",
+    "prepublishOnly": "npm run validate"
+  },
+  "claudeCode": {
+    "type": "skill",
+    "skillName": "prompt-architect",
+    "skillPath": "skills/prompt-architect",
+    "version": "3.2.2",
+    "compatibility": {
+      "claudeCode": ">=1.0.0"
+    },
+    "intentCategories": [
+      "recover",
+      "clarify",
+      "create",
+      "transform",
+      "reason",
+      "critique",
+      "agentic"
+    ],
+    "frameworks": [
+      "CO-STAR",
+      "RISEN",
+      "RISE-IE",
+      "RISE-IX",
+      "TIDD-EC",
+      "CTF",
+      "RTF",
+      "APE",
+      "BAB",
+      "RACE",
+      "CRISPE",
+      "BROKE",
+      "CARE",
+      "Skeleton-of-Thought",
+      "Step-Back",
+      "Least-to-Most",
+      "Plan-and-Solve",
+      "Tree-of-Thought",
+      "ReAct",
+      "Chain-of-Thought",
+      "Chain-of-Density",
+      "Self-Refine",
+      "CAI-Critique-Revise",
+      "Devils-Advocate",
+      "Pre-Mortem",
+      "RCoT",
+      "RPEF",
+      "Reverse-Role-Prompting"
+    ],
+    "features": {
+      "promptAnalysis": true,
+      "intentBasedSelection": true,
+      "frameworkRecommendation": true,
+      "iterativeRefinement": true,
+      "qualityScoring": true,
+      "frameworkCombinations": true
+    }
+  },
+  "dependencies": {
+    "@clack/prompts": "^1.1.0"
+  }
+}
